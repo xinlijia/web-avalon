@@ -24,19 +24,22 @@ class Round extends Component {
 			round_end: false
 		}
 	}
-
+	// Decide to vote succeed
 	succeed(){
 		if(!this.state.round_end){
 			this.setState({vote_preview: 'Succeed!'})
 		}
 	}
+	// Decide to vote fail
 	fail(){
 		if(!this.state.round_end){
 			this.setState({vote_preview: 'Fail!'})
 		}
 	}
+	// Commit vote
 	vote(){
 		if(this.state.vote_preview != null && !this.state.round_end){
+			// Finish voting, ready to check result
 			if(this.state.vote_num == this.voter_num_dic[this.state.player_num][this.state.round_num]){
 				const new_vote_result = this.state.vote_result;
 				new_vote_result.push(this.state.vote_preview);

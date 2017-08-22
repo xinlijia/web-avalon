@@ -197,7 +197,7 @@ class App extends Component {
             	    </TabPanel>
 
             	    <TabPanel>
-			  	        <Round num='5' player_num={this.state.player_num}/>
+                        <Round num='5' player_num={this.state.player_num}/>
             	    </TabPanel>
             	    </Tabs>
         	    </TabPanel>
