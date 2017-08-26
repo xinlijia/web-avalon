@@ -86,7 +86,7 @@ class App extends Component {
         }
         else if(player_num == 9){
             var random_list = shuffleArray([1, 2, 3, 4, 5, 6, 7, 8, 9]);
-            var identities = ['Merlin', 'Percival', 'Loyal Servant', 'Loyal Servant', 'Loyal Servant', 'Morgana', 'Assassin', 'Mordred'];
+            var identities = ['Merlin', 'Percival', 'Loyal Servant', 'Loyal Servant', 'Loyal Servant', 'Loyal Servant', 'Morgana', 'Assassin', 'Mordred'];
             var new_dic = {}
             for (var i = 0; i < 9; i++){
                 new_dic[random_list[i]] = identities[i];
