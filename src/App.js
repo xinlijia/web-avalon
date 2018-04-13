@@ -32,14 +32,14 @@ class App extends Component {
     }
     // Change the player number if the game does not start
     setPlayerNumber(player_num){
-        if (this.state.is_started == false){
+        if (this.state.is_started === false){
             this.setState({player_num: player_num});
 
         }
     }
     // Set the number of players. Cannot be changed after set
     numberSetDone(){
-        if(this.state.is_started == false){
+        if(this.state.is_started === false){
             this.setState({is_started: true});
         }
         this.generateIdentities(this.state.player_num);
@@ -47,58 +47,62 @@ class App extends Component {
     }
     // Randomly assign identities according to the number of player
     // Called when number of player is set
-    generateIdentities(player_num){      
-        if(player_num == 5){
-            var random_list = shuffleArray([1, 2, 3, 4, 5]);
-            var identities = ['Merlin', 'Percival', 'Loyal Servant', 'Morgana', 'Assassin'];
-            var new_dic = {}
-            for (var i = 0; i < 5; i++){
+    generateIdentities(player_num){
+        var random_list;
+        var identities;
+        var new_dic;  
+        var i;    
+        if(player_num === 5){
+            random_list = shuffleArray([1, 2, 3, 4, 5]);
+            identities = ['Merlin', 'Percival', 'Loyal Servant', 'Morgana', 'Assassin'];
+            new_dic = {}
+            for (i = 0; i < 5; i++){
                 new_dic[random_list[i]] = identities[i];
             }
             this.setState({identity_dic: new_dic})            
         }
-        else if(player_num == 6){
-            var random_list = shuffleArray([1, 2, 3, 4, 5, 6]);
-            var identities = ['Merlin', 'Percival', 'Loyal Servant', 'Loyal Servant', 'Morgana', 'Assassin'];
-            var new_dic = {}
-            for (var i = 0; i < 6; i++){
+        else if(player_num === 6){
+            random_list = shuffleArray([1, 2, 3, 4, 5, 6]);
+            identities = ['Merlin', 'Percival', 'Loyal Servant', 'Loyal Servant', 'Morgana', 'Assassin'];
+            new_dic = {}
+            for (i = 0; i < 6; i++){
                 new_dic[random_list[i]] = identities[i];
             }
             this.setState({identity_dic: new_dic})            
         }
-        else if(player_num == 7){
-            var random_list = shuffleArray([1, 2, 3, 4, 5, 6, 7]);
-            var identities = ['Merlin', 'Percival', 'Loyal Servant', 'Loyal Servant', 'Morgana', 'Assassin', 'Oberon'];
-            var new_dic = {}
-            for (var i = 0; i < 7; i++){
+        else if(player_num === 7){
+            random_list = shuffleArray([1, 2, 3, 4, 5, 6, 7]);
+            identities = ['Merlin', 'Percival', 'Loyal Servant', 'Loyal Servant', 'Morgana', 'Assassin', 'Oberon'];
+            new_dic = {}
+            for (i = 0; i < 7; i++){
                 new_dic[random_list[i]] = identities[i];
             }
             this.setState({identity_dic: new_dic})            
         }
-        else if(player_num == 8){
-            var random_list = shuffleArray([1, 2, 3, 4, 5, 6, 7, 8]);
-            var identities = ['Merlin', 'Percival', 'Loyal Servant', 'Loyal Servant', 'Loyal Servant', 'Morgana', 'Assassin', 'Minion of Mordred'];
-            var new_dic = {}
-            for (var i = 0; i < 8; i++){
+        else if(player_num === 8){
+            random_list = shuffleArray([1, 2, 3, 4, 5, 6, 7, 8]);
+            identities = ['Merlin', 'Percival', 'Loyal Servant', 'Loyal Servant', 'Loyal Servant', 'Morgana', 'Assassin', 'Minion of Mordred'];
+            new_dic = {}
+            for (i = 0; i < 8; i++){
                 new_dic[random_list[i]] = identities[i];
             }
             this.setState({identity_dic: new_dic})            
         }
-        else if(player_num == 9){
-            var random_list = shuffleArray([1, 2, 3, 4, 5, 6, 7, 8, 9]);
-            var identities = ['Merlin', 'Percival', 'Loyal Servant', 'Loyal Servant', 'Loyal Servant', 'Loyal Servant', 'Morgana', 'Assassin', 'Mordred'];
-            var new_dic = {}
-            for (var i = 0; i < 9; i++){
+        else if(player_num === 9){
+            random_list = shuffleArray([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+            identities = ['Merlin', 'Percival', 'Loyal Servant', 'Loyal Servant', 'Loyal Servant', 'Loyal Servant', 'Morgana', 'Assassin', 'Mordred'];
+            new_dic = {}
+            for (i = 0; i < 9; i++){
                 new_dic[random_list[i]] = identities[i];
             }
             this.setState({identity_dic: new_dic})            
         }
-        else if(player_num == 10){
-            var random_list = shuffleArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
-            var identities = ['Merlin', 'Percival', 'Loyal Servant', 'Loyal Servant', 'Loyal Servant',
+        else if(player_num === 10){
+            random_list = shuffleArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+            identities = ['Merlin', 'Percival', 'Loyal Servant', 'Loyal Servant', 'Loyal Servant',
              'Loyal Servant', 'Morgana', 'Assassin', 'Mordred', 'Oberon'];
-            var new_dic = {}
-            for (var i = 0; i < 10; i++){
+            new_dic = {}
+            for (i = 0; i < 10; i++){
                 new_dic[random_list[i]] = identities[i];
             }
             this.setState({identity_dic: new_dic})            

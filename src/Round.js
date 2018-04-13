@@ -40,7 +40,7 @@ class Round extends Component {
 	vote(){
 		if(this.state.vote_preview != null && !this.state.round_end){
 			// Finish voting, ready to check result
-			if(this.state.vote_num == this.voter_num_dic[this.state.player_num][this.state.round_num]){
+			if(this.state.vote_num === this.voter_num_dic[this.state.player_num][this.state.round_num]){
 				const new_vote_result = this.state.vote_result;
 				new_vote_result.push(this.state.vote_preview);
 				this.setState({vote_result: new_vote_result});
@@ -60,11 +60,11 @@ class Round extends Component {
 		if(this.state.round_end){
 			var fail_count = 0
 			for(var i = 0; i < this.state.vote_result.length; i++){
-				if(this.state.vote_result[i] == 'Fail!'){
+				if(this.state.vote_result[i] === 'Fail!'){
 					fail_count = fail_count + 1;
 				}
 			}
-			if(this.state.round_num == 4 && this.state.player_num >= 7){
+			if(this.state.round_num === 4 && this.state.player_num >= 7){
 				if(fail_count >= 2){
 					this.setState({vote_preview: 'Final Result: Fail!'})
 				}
